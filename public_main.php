@@ -8,7 +8,7 @@
 	<meta name="copyright" content="Vasy" />
 	<!<meta name="keywords" content="fából bútor,bútorlap,konyha,ágy,emeletes ágy,éjjeli szekrény,esztergált láb,rönkbútor,faajtó" />
 	<link href="style.css" media="screen" rel="stylesheet" type="text/css" />
-	<!<link rel="shortcut icon" href="favicon.ico">
+	<link rel="shortcut icon" href="favicon.ico">
 </head>
 <body>
 
@@ -18,11 +18,15 @@
 				<h1 valign="center" align="middle">
 					UPRA
 				</h1>
+
 		
 		</div><! &head>
 		<div id="menu">
 			<ul class="menu" >
 				<li><a href="?np=gallery">Galéria</a></li>
+				<li><a href="?np=map">Térkép</a></li>
+				<li><a href="?np=altitude">Magasság</a></li>
+				<li><a href="?np=database">DBTEST</a></li>
 			</ul>
 		</div><! &menu>
 		<div id="top" >

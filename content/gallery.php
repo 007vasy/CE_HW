@@ -11,7 +11,7 @@
 		$kep = $_GET["y"];
 		
 		$filename = 'image/'.$kep.'.jpg';	
-		if (empty($kep)) 
+		if (empty($kep)||$kep<"0") 
 			$kep="0";
 		
 		echo ('<a href="?np='.$_GET["np"].'&y='.($kep-1).'"> <<< </a>

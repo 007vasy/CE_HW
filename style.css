@@ -1,15 +1,16 @@
+
 body	{
-		background: url("bg5.jpg") repeat fixed;
+		/*background: url("bg5.jpg") repeat fixed;*/
 }
 div#frame{ 	
 			margin:0px auto;
-			width: 1000px;
-			height: 600px;
+			width: auto;
+			height: auto;
 }
 div#contain	{ 	
-			float: left;
-			width: 1000px;
-			height: 600px;
+			float: center;
+			width: auto;
+			height: auto;
 			border-radius: 10px;
 			border:0px solid;
 			
@@ -20,7 +21,7 @@ div#head 	{
 			font-style:arial;
 			font-size:30px;
 			color:white;
-			width:1000px;
+			width:auto;
 			padding-top:15px;
 			padding-bottom:15px;
 			border-radius:10px;
@@ -43,7 +44,7 @@ div#menu		{
 			width: 215px;
 			background: -moz-linear-gradient(top,#A53800,#E1AA49);
 			background: -webkit-gradient:(linear,left top,left bottom, from(#A53800),to(#E1AA49));
-			height: 400px;
+			height: auto;
 			border-radius:10px;
 			border:0px solid;
 			margin-right:5px;
@@ -91,7 +92,7 @@ div#menu ul.menu li a#pointer:hover{
 			
 }
 div#top	{
-			width:750px;
+			width:auto;
 			
 			float: left;
 			background: -moz-linear-gradient(top,#A53800,#E1AA49);
@@ -123,7 +124,7 @@ box-shadow: 2px 2px 5px #2e2e2e;
 
 }
 div#imp{		float: left;
-			width: 1000px;
+			width: auto;
 			background: -moz-linear-gradient(top,#E1AA49,#A53800);
 			background: -webkit-gradient:(linear,left top,left bottom, from(#E1AA49),to(#A53800));
 			height: 20px;
