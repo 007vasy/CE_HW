@@ -37,23 +37,25 @@ var stavanger=new google.maps.LatLng(58.983991,5.734863);
 var amsterdam=new google.maps.LatLng(52.395715,4.888916);
 var london=new google.maps.LatLng(51.508742,-0.120850);*/
 
-/*var myTrip
-for (i = 1; i <= jdata.length; i++) { 
-    myTrip += new google.maps.LatLng(jdata[i]["lat"]+","+jdata[i]["long"]);
-}*/
 
 
 function initialize()
 {
 var mapProp = {
   center:x,
-  zoom:8,
+  zoom:9,
   mapTypeId:google.maps.MapTypeId.SATELLITE
-  };
+};
   
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
 // var myTrip=[stavanger,amsterdam,london];
+
+var myTrip=[];
+for (i = 1; jdata[i]; i++) { 
+    var pos=new google.maps.LatLng(String(jdata[i]['lat']),String(jdata[i]['long']));
+    myTrip.push(pos);
+}
 
 var flightPath=new google.maps.Polyline({
   path:myTrip,
