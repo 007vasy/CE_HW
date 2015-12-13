@@ -6,23 +6,46 @@ mysqli_query($con,"SET names 'utf8'");
 
 mysqli_select_db($con, "upra");
 
-$data[]=array();
+$result_start=mysqli_query($con,"SELECT `timestamp` FROM `Mission_time` WHERE `fly`=1 ORDER bY `timestamp` ASC");
 
-$result=mysqli_query($con,"SELECT `dkey`,`lat`,`long`,`alt` FROM `Data` ORDER bY `dkey`");
+echo('
+		<div><table align="center"><form action="" method="post" ><tr>
+								<td><input list="starttime" name="starttime"><datalist id="starttime">
+	');	
 
-		//var_dump($row = mysqli_fetch_array($, MYSQLI_ASSOC));
-		while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
+
+		
+		while($row_start = mysqli_fetch_array($result_start, MYSQLI_ASSOC))
 							{
-							$data[] = $row;
+								echo('<option value="'.$row_start["timestamp"].'">');
 							}
+echo('
+		</td><td><input type="submit" value="View"></td>
+									</tr>
+		</datalist></form></div>
+	');
 
-mysqli_close($con);
+if(!empty($_POST))
+{
+	$result=mysqli_query($con,"SELECT `dkey`,`lat`,`long`,`alt`,`timestamp` FROM `Data` WHERE `timestamp` BETWEEN  '".$_POST["starttime"]."' AND IFNULL((SELECT Min(`timestamp`) FROM `Mission_time` WHERE `fly`=0 AND `timestamp` >= '".$_POST["starttime"]."'),NOW())  ORDER bY `dkey` ");
+}
+else
+{
+	$result=mysqli_query($con,"SELECT `dkey`,`lat`,`long`,`alt`,`timestamp` FROM `Data` WHERE`timestamp` >= (SELECT Max(`timestamp`) FROM `Mission_time` WHERE `fly`=1) ORDER bY `dkey`");
+}
+
+$data[]=array();
+while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
+							{
+
+							$data[] = $row;
+							
+							}		
 
 
 //echo json_encode($data, JSON_PRETTY_PRINT);
-
+mysqli_close($con);
 ?>
-
 
 <script src="http://maps.googleapis.com/maps/api/js">
 </script>
