@@ -1,6 +1,6 @@
-<table align="center">
+	<table align="center">
 					<tr class="wh">
-						
+
 						<td>dkey</td>
 						<td>timestamp</td>
 						<td>lat</td>
@@ -22,19 +22,13 @@
 						<td>bat_vcc</td>
 					</tr>
 				<?php
-					
-					
-				
-	
-					$con = mysqli_connect("localhost","root","","upra")
-					or die("Connection Error".mysql_error());
-					
-					mysqli_query($con,"SET names 'utf8'");
 
-					mysqli_select_db($con, "upra");
-															
+
+
+
+
 					$data=mysqli_query($con,"SELECT * FROM Data ORDER BY dkey ASC");
-					
+
 							while($row = mysqli_fetch_array($data, MYSQLI_ASSOC))
 							{
 								echo ('
@@ -60,7 +54,6 @@
 										<td>'.$row["bat_vcc"].'</td>
 									</tr>');
 							}
-					
-					mysqli_close($con);
-				?>	
-				</table>
+
+				?>
+	</table>
