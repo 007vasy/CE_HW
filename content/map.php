@@ -81,7 +81,7 @@ function initialize()
 google.maps.event.addDomListener(window, 'load', initialize);
 
 function refreshMap(start){
-    clearTimeout(refreshTimeOut);
+   
     $.post("api.php", {
         api: "map",
         starttime: start
