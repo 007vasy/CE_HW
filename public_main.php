@@ -26,14 +26,14 @@
 		</div><!-- &menu-->
 		<div id="top" >
 		<?php
-			include("config.php");
+			
 			if(empty($_GET["np"]))
 				$pp="gallery";
 			else
 				$pp=$_GET["np"];
 
 			include('content/'.$pp.'.php');
-			mysqli_close($con);
+			
 		?>
 		</div><!-- &top-->
 		<div id="imp">

@@ -1,6 +1,6 @@
 <?php
 
-include("config.php");
+include("dbconfig.php");
 
 
 if(empty($_POST) || !isset($_POST['api'])) die('{"error": "error"}');
@@ -26,12 +26,17 @@ if($_POST['api'] == 'map'){
   $result = mysqli_query($con,
     "SELECT `mkey` FROM `Mission_time` WHERE `fly`='0' AND `timestamp` >= '".$_POST["starttime"]."'"
   );
+
+  
+
   $is_last = (mysqli_num_rows($result) == 0);
 
 
   echo json_encode(array("jdata"=>$data, "last"=>$is_last), JSON_PRETTY_PRINT);
 
-} else {
+}
+
+else {
   die('{"error":"No such api!"}');
 }
 

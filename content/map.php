@@ -1,6 +1,6 @@
 <?php
 
-include("config.php");
+include("dbconfig.php");
 
 
 
@@ -38,7 +38,6 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
 	$data[] = $row;
 
 
-//echo json_encode($data, JSON_PRETTY_PRINT);
 ?>
 
 <script src="http://maps.googleapis.com/maps/api/js">
@@ -96,7 +95,7 @@ function refreshMap(start){
       }
 
       if(data.last){
-        setTimeout("refreshMap('"+start+"');", 2000);
+        setTimeout("refreshMap('"+start+"');", 1000);
       }
     }, "json");
 }
