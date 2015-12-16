@@ -88,7 +88,10 @@ function refreshMap(start){
     }, function( data ) {
       if(data.jdata[data.jdata.length-1].dkey != jdata[jdata.length-1].dkey){
         jdata = data.jdata;
-        x=new google.maps.LatLng(String(jdata[0]['lat']),String(jdata[0]['long']));
+
+        for(j=0;j<(jdata.length)/2;j++)
+
+        x=new google.maps.LatLng(String(jdata[j]['lat']),String(jdata[j]['long']));
         initialize();
       }
 

@@ -16,13 +16,6 @@
 
 <div id="frame">
 	<div id="contain">
-		<div id="head">
-				<h1 valign="center" align="middle">
-					UPRA
-				</h1>
-
-
-		</div><!-- &head-->
 		<div id="menu">
 			<ul class="menu" >
 				<li><a href="?np=gallery">Galéria</a></li>
