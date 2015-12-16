@@ -33,7 +33,7 @@ if($_POST['api'] == 'map'){
 
 
 
-  $is_last = (mysqli_num_rows($result) == 0 && $currentMissionTime == $_POST["starttime"]);
+  $is_last = (mysqli_num_rows($result) );
 
 
   echo json_encode(array("jdata"=>$data, "last"=>$is_last), JSON_PRETTY_PRINT);
