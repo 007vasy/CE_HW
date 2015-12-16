@@ -27,9 +27,13 @@ if($_POST['api'] == 'map'){
     "SELECT `mkey` FROM `Mission_time` WHERE `fly`='0' AND `timestamp` >= '".$_POST["starttime"]."'"
   );
 
-  
+  $currentMissionTime = mysqli_query($con,
+    "SELECT Max(`timestamp`) FROM `Mission_time` WHERE `fly`='1'"
+  );
 
-  $is_last = (mysqli_num_rows($result) == 0);
+
+
+  $is_last = (mysqli_num_rows($result) == 0 && $currentMissionTime == $_POST["starttime"]);
 
 
   echo json_encode(array("jdata"=>$data, "last"=>$is_last), JSON_PRETTY_PRINT);
