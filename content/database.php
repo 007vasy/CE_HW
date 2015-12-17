@@ -28,7 +28,7 @@
 
 					include("dbconfig.php");
 					$data=mysqli_query($con,"SELECT * FROM Data ORDER BY dkey ASC");
-					mysqli_close($con);
+					
 							while($row = mysqli_fetch_array($data, MYSQLI_ASSOC))
 							{
 								echo ('

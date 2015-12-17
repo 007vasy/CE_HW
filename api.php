@@ -1,12 +1,12 @@
 <?php
 
-include("dbconfig.php");
+
 
 
 if(empty($_POST) || !isset($_POST['api'])) die('{"error": "error"}');
 
 
-if($_POST['api'] == 'map'){
+if($_POST['api'] == 'map'||$_POST['api'] == 'alt'||){){
 
   $result=mysqli_query($con,
   "SELECT `dkey`,`lat`,`long`,`alt`,`timestamp` FROM `Data`
@@ -44,5 +44,5 @@ else {
   die('{"error":"No such api!"}');
 }
 
-mysqli_close($con);
+
 ?>

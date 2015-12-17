@@ -41,7 +41,7 @@ div#head h1{
 }
 div#menu		{
 			float: left;
-			width: 215px;
+			width: 300px;
 			background: -moz-linear-gradient(top,#A53800,#E1AA49);
 			background: -webkit-gradient:(linear,left top,left bottom, from(#A53800),to(#E1AA49));
 			height: auto;
@@ -70,7 +70,7 @@ div#menu ul.menu li a {
 			border-left:4px solid #ccc;
 			height: 16px;
 			display: block;
-			
+			text-align: center;
 			
 }
 
@@ -135,5 +135,20 @@ div#imp{		float: left;
 			color:#0C5400;
 			padding-top:5px;
 			box-shadow: 2px 2px 5px #2e2e2e;
+			
+}
+
+div#missionlist{
+	float: right;
+	width: 215px;
+	background: -moz-linear-gradient(top,#A53800,#E1AA49);
+	background: -webkit-gradient:(linear,left top,left bottom, from(#A53800),to(#E1AA49));
+	height: auto;
+	border-radius:10px;
+	border:0px solid;
+	margin-right:5px;
+	margin-bottom: 20px;
+	box-shadow: 2px 2px 5px #2e2e2e;
+
 			
 }
