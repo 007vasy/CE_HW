@@ -41,6 +41,13 @@
 			<?php
 				include("missionlist.php");
 			?>
+			<script type="text/javascript">
+				$("#map").change(function(event){
+				    event.preventDefault();
+				    refreshGraph($("input[name='starttime']").val());
+				    refreshMap($("input[name='starttime']").val());
+				});
+			</script>
 		</div><!-- &menu-->
 
 		<div id="top" >

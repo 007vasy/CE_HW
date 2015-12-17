@@ -67,10 +67,10 @@ function refreshMap(start){
     }, "json");
 }
 
-$("#map").changed(function(event){
+/*$("#map").changed(function(event){
     event.preventDefault();
     refreshMap($("input[name='starttime']").val());
-});
+});*/
 
 </script>
 
